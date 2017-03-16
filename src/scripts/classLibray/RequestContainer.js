@@ -156,6 +156,7 @@ var RequestContainer = (function () {
       var promiseState = this.container[key];
 
       if(promiseState.status==1){
+
         promiseState.promiseFn.abort();
       }
       this.remove(key);

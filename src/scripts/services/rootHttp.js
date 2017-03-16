@@ -42,7 +42,8 @@ angular.module('imgWebApp').service('rootHttp', ['$http', '$q', 'toastr', 'urlAc
           if (isExist) {
               timeout = canceler.promise;
           } else if(isLine){
-              timeout = 10000;
+              // timeout = 200000;
+              timeout = canceler.promise;
           }else{
               timeout = canceler.promise;
           }
@@ -51,6 +52,7 @@ angular.module('imgWebApp').service('rootHttp', ['$http', '$q', 'toastr', 'urlAc
               headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'},
               timeout: timeout
           };
+
 
           // console.log(navigator);
           var ajax = $http.get(url,postCfg).then(function (res) {
@@ -84,6 +86,7 @@ angular.module('imgWebApp').service('rootHttp', ['$http', '$q', 'toastr', 'urlAc
 
               canceler.resolve();
           };
+
 
 
           return deferred.promise;

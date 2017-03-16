@@ -8,12 +8,21 @@
  * Controller of the imgWebApp
  */
 angular.module('imgWebApp')
-  .controller('ImglistCtrl',['$rootScope','$scope','getData',function ($rootScope,$scope,getData) {
+  .controller('ImglistCtrl',['$rootScope','$scope','getData','urlAction','$routeParams',function ($rootScope,$scope,getData,urlAction,$routeParams) {
+
 
 
 
       $scope.loading = true;
-      getData.imgSelect($rootScope.limitPage).then(function(data){
+
+
+      if(!Number($routeParams.limit)){
+          $scope.limit = 0;
+      }else{
+          $scope.limit = $routeParams.limit;
+      }
+
+      getData.imgSelect($scope.limit).then(function(data){
           $scope.imgSelect = data;
           $scope.loading = false;
 
@@ -31,7 +40,7 @@ angular.module('imgWebApp')
       $scope.searchAction=function(e){
           var keyCode = window.event?e.keyCode:e.which;
           if(keyCode===13){
-              loadnavbar.clean();
+              // loadnavbar.clean();
               $scope.loading = true;
               getData.imgSearch($scope.searchTitle).then(function(data){
                   $scope.imgSelect=data;
@@ -49,7 +58,7 @@ angular.module('imgWebApp')
 
       $scope.limitPageInfo = function() {
           $scope.loading = true;
-          loadnavbar.clean();
+          // loadnavbar.clean();
           $scope.$emit('limitPageInfo', $rootScope.limitPage);
       };
       $scope.goto=function(){
@@ -63,15 +72,20 @@ angular.module('imgWebApp')
 
       $scope.page=function(page){
 
-          loadnavbar.clean();
+          // loadnavbar.clean();
           console.log($rootScope.loading);
           if(page){
               $rootScope.limitPage= Number($rootScope.limitPage)+18;
+
+
+              urlAction.gotoUrl('imgList/'+$rootScope.limitPage);
+              /*
               $scope.limitPageInfo();
               getData.imgSelect($rootScope.limitPage).then(function(data){
                   $scope.imgSelect = data;
                   $scope.loading = false;
               });
+              */
 
           }else{
               if($rootScope.limitPage>0){

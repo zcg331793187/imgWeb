@@ -11,9 +11,7 @@
     $rootScope.host = $location.$$protocol+'://'+'img.chowgiftking.com';
       $rootScope.limitPage=0;
 
-      $scope.$on('limitPageInfo', function(e, limitPage) {
-          $rootScope.limitPage=limitPage;
-      });
+
 
 
     $rootScope.views = {

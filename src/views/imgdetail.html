@@ -1,0 +1,17 @@
+<div class="row" ng-if="loading">
+    <div class="col-xs-12 col-lg-12 col-sm-12 text-center h1 text-danger">
+        加载中
+    </div>
+</div>
+<div ng-if="!loading" class="bg-success text-center h2 text-success caption">
+    <span class="linebr" ng-bind="imgs[0]['title']"></span>
+    <span ng-bind="imgs.length"></span> 张
+</div>
+<div class="row animate-repeat" ng-repeat="x in imgs">
+    <div class="col-xs-12 col-lg-12 col-sm-12 text-center" >
+        <img   imgload
+               temp-src="{{x.url}}"
+               alt="{{x.title}}"
+               class="img img-responsive img-b">
+    </div>
+</div>

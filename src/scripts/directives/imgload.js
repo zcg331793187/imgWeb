@@ -8,10 +8,10 @@
  */
 angular.module('imgWebApp')
   .directive('imgload', ['$rootScope','getData',function ($rootScope,getData) {
+      var num = 0;
     return {
         restrict: 'A',
       link: function postLink(scope, element, attrs) {
-
           var base64Url = attrs.tempSrc;
 
           var api  =$rootScope.api;
@@ -19,21 +19,28 @@ angular.module('imgWebApp')
           attrs.$set('src',temp);
 
 
+          if(attrs.isLoad==1){
+              return;
+          }
+
+
+
           if(!base64Url){
 
               return;
           }else{
+              attrs.$set('isLoad',1);
 
 
-              getData.imgProxy(base64Url).then(function (error,res) {
+              getData.imgProxy(base64Url).then(function (res) {
 
-                  if(error){
-                      console.log(
-                          error
-                      );
-                      return;
+
+
+
+                  if(res.base64){
+                      attrs.$set('src',res.base64);
                   }
-                  attrs.$set('src',data.base64);
+
               });
 
           }

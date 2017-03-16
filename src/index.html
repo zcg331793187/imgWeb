@@ -4,10 +4,13 @@
   <meta charset="utf-8">
   <!--<title ng-bind="selected"></title>-->
   <title></title>
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1,maximum-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="viewport" content="width=device-width,user-scalable=no" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
   <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
@@ -42,13 +45,47 @@
 
 
 
-    <div >
+<div class="container" >
+  <div class="header">
+    <div class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
 
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
 
+          <a class="navbar-brand" ng-href="#/img">images databases</a>
+        </div>
 
-      <div   ng-class="pageViewAnimate" ng-view></div>
+        <div class="collapse navbar-collapse" id="js-navbar-collapse">
 
+          <ul class="nav navbar-nav">
+            <!--<li ><a href="#/home">Home</a></li>-->
+            <!--<li><a ng-href="#/event">event</a></li>-->
+            <!--<li><a ng-href="#/daP">Contact</a></li>-->
+            <!--<li><a ng-href="#/xiaoP">xiaoP</a></li>-->
+            <!--<li><a ng-href="#/address">Contact</a></li>-->
+            <!--<li><a ng-href="#/chat">Contact</a></li>-->
+            <!--<li><a ng-href="#/score">score</a></li>-->
+            <!--<li><a ng-href="#/forms">forms</a></li>-->
+            <!--<li><a ng-href="#/animate">animate</a></li>-->
+            <!--<li><a ng-href="#/cookies">cookies</a></li>-->
+            <!--<li><a ng-href="#/textHttp">textHttp</a></li>-->
+            <!--<li><a ng-href="#/study-directive">study-directive</a></li>-->
+            <!--<li class="active"><a ng-href="#/img">img</a></li>-->
+            <!--<li class="active"><a ng-href="#/touch">touch</a></li>-->
+          </ul>
+        </div>
+      </div>
     </div>
+  </div>
+  <div ng-view="" ></div>
+
+</div>
 
 
 
@@ -108,6 +145,7 @@
 <script src="scripts/directives/swiper-event.js"></script>
 <script src="scripts/controllers/imglist.js"></script>
 <script src="scripts/directives/imgload.js"></script>
+<script src="scripts/controllers/imgdetail.js"></script>
 <!-- endbuild -->
 </body>
 </html>
