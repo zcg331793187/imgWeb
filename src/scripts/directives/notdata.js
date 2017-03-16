@@ -2,11 +2,11 @@
 
 /**
  * @ngdoc directive
- * @name imgWeb.directive:NotData
+ * @name imgWebApp.directive:NotData
  * @description
  * # NotData
  */
-angular.module('imgWeb')
+angular.module('imgWebApp')
   .directive('notData', function () {
     return {
       template: '<div></div>',

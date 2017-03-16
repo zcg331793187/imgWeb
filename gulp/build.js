@@ -25,7 +25,7 @@ gulp.task('partials', function () {
       collapseWhitespace: true
     }))
     .pipe($.angularTemplatecache('templateCacheHtml.js', {
-      module: 'imgWeb',
+      module: 'imgWebApp',
       root: 'views'
     }))
     .pipe(gulp.dest(conf.paths.tmp + '/partials/'));

@@ -4,14 +4,18 @@
 
 (function () {
   "use strict";
-  angular.module('imgWeb').controller('mainController', ['$rootScope', '$scope', '$routeParams', '$location', function ($rootScope, $scope, $routeParams, $location) {
+  angular.module('imgWebApp').controller('mainController', ['$rootScope', '$scope', '$routeParams', '$location', function ($rootScope, $scope, $routeParams, $location) {
 
 
-    $rootScope.api = $location.$$protocol ;
-    $rootScope.host = $location.$$protocol;
+    $rootScope.api = $location.$$protocol+'://'+'img.chowgiftking.com';
+    $rootScope.host = $location.$$protocol+'://'+'img.chowgiftking.com';
+      $rootScope.limitPage=0;
 
-    // console.log(bottomNav.settTingValue());
-    // $scope.selected = bottomNav.settTingValue();
+      $scope.$on('limitPageInfo', function(e, limitPage) {
+          $rootScope.limitPage=limitPage;
+      });
+
+
     $rootScope.views = {
       controller: {
         header: {}, footer: {}, classes: {}, titleSetting: function (title) {

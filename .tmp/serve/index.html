@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="imgWeb" ng-controller="mainController">
+<html ng-app="imgWebApp" ng-controller="mainController">
 <head>
   <meta charset="utf-8">
   <!--<title ng-bind="selected"></title>-->
@@ -18,8 +18,7 @@
 
   <!-- build:css({.tmp/serve,src}) styles/app.css -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="styles/app.css">
-  <link rel="stylesheet" href="styles/appAnimation.css">
+  <link rel="stylesheet" href="styles/bootstrap.css">
   <!-- endinject -->
   <!-- endbuild -->
 
@@ -71,8 +70,10 @@
 <script src="scripts/services/accesscontrol.js"></script>
 <script src="scripts/directives/swiper-event.js"></script>
 <script src="scripts/directives/notdata.js"></script>
+<script src="scripts/directives/imgload.js"></script>
 <script src="scripts/controllers/main.js"></script>
 <script src="scripts/controllers/index.js"></script>
+<script src="scripts/controllers/imglist.js"></script>
 <script src="scripts/classLibray/swiper.js"></script>
 <script src="scripts/classLibray/me-lazyimg.js"></script>
 <script src="scripts/classLibray/angular-swiper.js"></script>
@@ -87,14 +88,13 @@
 <!-- angular templates will be automatically converted in js and inserted here -->
 <!-- endinject -->
 <script src="scripts/services/accesscontrol.js"></script>
-<!--<script src="scripts/directives/enterpaypassword.js"></script>-->
-<!--<script src="scripts/directives/showlotterymessage.js"></script>-->
-<script src="scripts/services/subscription.js"></script>
 
 
 <script src="scripts/services/views.js"></script>
 
 <script src="scripts/directives/swiper-event.js"></script>
+<script src="scripts/controllers/imglist.js"></script>
+<script src="scripts/directives/imgload.js"></script>
 <!-- endbuild -->
 </body>
 </html>

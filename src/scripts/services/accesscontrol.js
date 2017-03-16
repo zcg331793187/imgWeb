@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc service
- * @name imgWeb.AccessControl
+ * @name imgWebApp.AccessControl
  * @description
  * # AccessControl
- * Service in the imgWeb.
+ * Service in the imgWebApp.
  * 路由权限控制
  * needLoginList：需要登录的列表的控制器
  */
-angular.module('imgWeb')
+angular.module('imgWebApp')
   .service('AccessControl',['$log',function ($log) {
     return {
       //需要登录进入的路由列表

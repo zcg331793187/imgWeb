@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc service
- * @name imgWeb.views
+ * @name imgWebApp.views
  * @description
  * # views
- * Service in the imgWeb.
+ * Service in the imgWebApp.
  * 控制头部底部切换动画
  */
-angular.module('imgWeb')
+angular.module('imgWebApp')
   .service('views', ['$rootScope','$log',function ($rootScope,$log) {
 
 

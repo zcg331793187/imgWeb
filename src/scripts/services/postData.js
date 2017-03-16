@@ -2,7 +2,7 @@
  * Created by zhoucaiguang on 16/9/1.
  */
 
-angular.module('imgWeb').service('postData', ['$rootScope', 'rootHttp', '$cookieStore', 'getData', 'shopCart', function ($rootScope, rootHttp, $cookieStore, getData, shopCart) {
+angular.module('imgWebApp').service('postData', ['$rootScope', 'rootHttp', '$cookieStore', 'getData', 'shopCart', function ($rootScope, rootHttp, $cookieStore, getData, shopCart) {
 
   var user_id;
 

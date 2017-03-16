@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc service
- * @name imgWeb.urlAction
+ * @name imgWebApp.urlAction
  * @description
  * # urlAction
- * Service in the imgWeb.
+ * Service in the imgWebApp.
  */
-angular.module('imgWeb')
+angular.module('imgWebApp')
   .service('urlAction', ['$rootScope', '$timeout', '$location', function ($rootScope, $timeout, $location) {
 
 

@@ -4,7 +4,8 @@
 
 (function(){
     "use strict";
-    angular.module('imgWeb').controller('indexController',['$rootScope','$scope','$routeParams','$location','getData','formatAjaxData',function($rootScope,$scope,$routeParams,$location,getData,formatAjaxData){
+    angular.module('imgWebApp').controller('indexController',['$rootScope','$scope','$routeParams','$location','getData','formatAjaxData',function($rootScope,$scope,$routeParams,$location,getData,formatAjaxData){
+
 
 
 

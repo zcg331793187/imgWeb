@@ -1,0 +1,59 @@
+<div class="row">
+    <form class="form-inline">
+        <div class="form-group">
+            <div class="col-xs-4 col-sm-6 col-lg-6">
+                <input type="search" class="form-control text-center text-success" ng-model="limitPage" placeholder="Search">
+            </div>
+            <div class="col-xs-8 col-sm-6 col-lg-6">
+                <button class="btn btn-info" ng-click="goto()">跳转</button>
+                <a class="btn btn-xs btn-warning">共<span class="badge" ng-bind="imgTotal">0</span>条
+                </a>
+            </div>
+        </div>
+    </form>
+
+
+</div>
+<div class=" row"
+     ng-if="!loading">
+    <div class="col-xs-3 col-lg-offset-2 col-sm-offset-2 col-xs-offset-2 col-lg-3 col-sm-3"></div>
+    <button class="btn btn-default" ng-if="limitPage>0" ng-click="page(0)">上一页</button>
+
+    <button class="btn btn-danger"  ng-click="page(1)">下一页</button>
+</div>
+<div class="row" ng-if="loading"
+><div class="col-xs-12 col-lg-12 col-sm-12 text-center  text-danger h3">
+    加载中
+</div></div>
+<div class="row">
+    <div  class="col-xs-6 col-sm-4 col-lg-4" ng-repeat="x in imgSelect |filter:search">
+        <a   href="/#/imgDetail/{{x.id}}">
+            <img imgload
+                 class="img-responsive img-thumbnail"
+                 base64="{{x.Base64}}"
+                 temp-src="{{x.imgThums}}" />
+            <div class="caption">
+                <span class="linebr">{{x.title}}</span>
+
+            </div>
+        </a>
+    </div>
+    <div class="col-xs-12 col-lg-12 animate-repeat text-danger" ng-if="imgSelect.length==0">
+        没有更多
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-xs-12 text-center" style="position: fixed;top:3em;left:0;z-index: 999;opacity: 0.3">
+        <input type="search" ng-model="searchTitle"  ng-keyup="searchAction($event)" />
+    </div>
+
+</div>
+
+<div class="row" ng-if="!loading">
+    <div class="col-xs-3 col-lg-offset-2 col-sm-offset-2 col-xs-offset-2 col-lg-3 col-sm-3"></div>
+    <button class="btn btn-default" ng-if="limitPage>0" ng-click="page(0)">上一页</button>
+    <button class="btn  btn-danger" ng-click="page(1)">下一页</button>
+</div>
+

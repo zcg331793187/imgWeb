@@ -1,9 +1,9 @@
 (function () {
 
   "use strict";
-  angular.module('imgWeb',['ngRoute','ngAnimate','toastr','ksSwiper','LocalStorageModule','me-lazyimg'])
+  angular.module('imgWebApp',['ngRoute','ngAnimate','toastr','ksSwiper','LocalStorageModule','me-lazyimg'])
     .config(function(localStorageServiceProvider){
-      localStorageServiceProvider.setPrefix('imgWebPrefix');
+      localStorageServiceProvider.setPrefix('imgWebAppPrefix');
       // localStorageServiceProvider.setStorageCookieDomain('example.com');
       // localStorageServiceProvider.setStorageType('sessionStorage');
     })
@@ -62,13 +62,13 @@
 
 
       $routeProvider
-        .when('/index', {
-          templateUrl: 'views/index.html',
-          controller: 'indexController',
-          controllerAs: 'index'
+        .when('/imgList', {
+          templateUrl: 'views/imglist.html',
+          controller: 'ImglistCtrl',
+          controllerAs: 'imgList'
         })
         .otherwise({
-          redirectTo: '/index'
+          redirectTo: '/imgList'
         })
 
     }])

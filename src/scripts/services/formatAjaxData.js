@@ -1,7 +1,7 @@
 /**
  * Created by zhoucaiguang on 16/9/1.
  */
-angular.module('imgWeb')
+angular.module('imgWebApp')
   .factory('formatAjaxData', [ '$rootScope', 'localStorageService', '$routeParams', function ( $rootScope, localStorageService, $routeParams) {
     var _thisData = {sonAddress: [], communitysList: []};
     var _thisCat = [];

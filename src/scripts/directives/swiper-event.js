@@ -2,11 +2,11 @@
 
 /**
  * @ngdoc directive
- * @name imgWeb.directive:swiperEvent
+ * @name imgWebApp.directive:swiperEvent
  * @description
  * # swiperEvent
  */
-angular.module('imgWeb')
+angular.module('imgWebApp')
   .directive('swiperEvent', ['urlAction', function (urlAction) {
     return {
       restrict: 'A',
