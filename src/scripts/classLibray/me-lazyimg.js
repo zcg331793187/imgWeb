@@ -50,6 +50,7 @@ angular.module('me-lazyimg', [])
                 iElement = obj.iElement,
                 iScope = obj.iScope;
             if(isVisible(iElement)){
+
                 iElement.attr('src', iScope.lazySrc);
             }
           });

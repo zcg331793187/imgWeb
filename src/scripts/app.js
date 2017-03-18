@@ -81,6 +81,11 @@
                     controller: 'ImgdetailCtrl',
                     controllerAs: 'imgDetail'
                 })
+                .when('/search/:title', {
+                  templateUrl: 'views/search.html',
+                  controller: 'SearchCtrl',
+                  controllerAs: 'search'
+                })
                 .otherwise({
                     redirectTo: '/imgList'
                 })

@@ -31,7 +31,7 @@ angular.module('imgWebApp')
       getData.imgTotal().then(function(data){
 
 
-          $scope.imgTotal = data.count;
+          $scope.imgTotal = data[0].count;
           $scope.loading = false;
       });
 
@@ -42,6 +42,7 @@ angular.module('imgWebApp')
           if(keyCode===13){
               // loadnavbar.clean();
               $scope.loading = true;
+              urlAction.gotoUrl('search/'+$scope.searchTitle);
               getData.imgSearch($scope.searchTitle).then(function(data){
                   $scope.imgSelect=data;
                   $scope.loading = false;
@@ -90,16 +91,20 @@ angular.module('imgWebApp')
           }else{
               if($rootScope.limitPage>0){
                   $rootScope.limitPage=Number($rootScope.limitPage)-18;
+                  urlAction.gotoUrl('imgList/'+$rootScope.limitPage);
+                  /*
+                  return;
                   $scope.limitPageInfo();
                   getData.imgSelect($rootScope.limitPage).then(function(data){
                       $scope.imgSelect =data;
                       $scope.loading = false;
 
                   });
+                  */
               }
 
           }
-          console.log($rootScope.limitPage);
+          // console.log($rootScope.limitPage);
       }
 
 

@@ -1,0 +1,29 @@
+
+<div class="row" ng-if="loading"
+><div class="col-xs-12 col-lg-12 col-sm-12 text-center  text-danger h3">
+    加载中
+</div></div>
+<div class="row">
+    <div  class="col-xs-6 col-sm-4 col-lg-4" ng-repeat="x in imgSelect">
+        <a   href="/#/imgDetail/{{x.id}}">
+            <img imgload
+                 class="img-responsive img-thumbnail"
+                 base64="{{x.Base64}}"
+                 temp-src="{{x.imgThums}}" />
+            <div class="caption">
+                <span class="linebr">{{x.title}}</span>
+
+            </div>
+        </a>
+    </div>
+    <div class="col-xs-12 col-lg-12 animate-repeat text-danger text-center" ng-if="imgSelect.length==0">
+        没有更多
+    </div>
+</div>
+
+
+<div class="row" >
+    <div class="col-xs-8 col-xs-offset-2" style="position: fixed;top:10em;left:0;z-index: 999;">
+        <input type="search" style="background-color: rgba(255, 255, 255, 0)" class="form-control" ng-model="searchTitle"  ng-keyup="searchAction($event)" placeholder="输入关键词">
+    </div>
+</div>

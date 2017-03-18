@@ -44,11 +44,10 @@
 </div>
 
 
-<div class="row">
-    <div class="col-xs-12 text-center" style="position: fixed;top:3em;left:0;z-index: 999;opacity: 0.3">
-        <input type="search" ng-model="searchTitle"  ng-keyup="searchAction($event)" />
+<div class="row" >
+    <div class="col-xs-8 col-xs-offset-2" style="position: fixed;top:10em;left:0;z-index: 999;">
+        <input type="search" style="background-color: rgba(255, 255, 255, 0)" class="form-control" ng-model="searchTitle"  ng-keyup="searchAction($event)" placeholder="输入关键词">
     </div>
-
 </div>
 
 <div class="row" ng-if="!loading">

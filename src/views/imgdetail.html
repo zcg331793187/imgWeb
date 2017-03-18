@@ -9,9 +9,12 @@
 </div>
 <div class="row animate-repeat" ng-repeat="x in imgs">
     <div class="col-xs-12 col-lg-12 col-sm-12 text-center" >
+        <a href="{{x.url}}" target="_blank">
+
         <img   imgload
                temp-src="{{x.url}}"
                alt="{{x.title}}"
                class="img img-responsive img-b">
+        </a>
     </div>
 </div>
