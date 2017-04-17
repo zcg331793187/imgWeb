@@ -8,7 +8,7 @@ angular.module('imgWebApp').service('getData', ['$rootScope', 'rootHttp', '$q', 
     return {
         getDetail: function (title) {
 
-            var url = $rootScope.api + '/img/imgDetail/title/' + title;
+            var url = $rootScope.api + '/imgDetail/' + title;
             var data = {
                 title:title
             };
@@ -17,13 +17,13 @@ angular.module('imgWebApp').service('getData', ['$rootScope', 'rootHttp', '$q', 
         },
         imgTotal: function () {
 
-            var url = $rootScope.api + '/img/imgtotal';
+            var url = $rootScope.api + '/imgtotal';
 
 
             return rootHttp.httpGet(url);
         },
         imgSearch: function (title) {
-            var url = $rootScope.api + '/img/imgSearch/title/' + title;
+            var url = $rootScope.api + '/imgSearch/' + title;
 
             var data = {
                 title:title
@@ -32,7 +32,8 @@ angular.module('imgWebApp').service('getData', ['$rootScope', 'rootHttp', '$q', 
             return rootHttp.httpGet(url,data);
 
         }, imgSelect: function (limit) {
-            var url = $rootScope.api + '/img/databaseSelect/limit/' + limit;
+            // var url = $rootScope.api + '/img/databaseSelect/limit/' + limit;
+            var url = $rootScope.api + '/imgTitles/' + limit;
 
             var data = {
                 limit:limit

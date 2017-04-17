@@ -1,3 +1,4 @@
+<div >
 <div class="row">
     <form class="form-inline">
         <div class="form-group">
@@ -28,10 +29,11 @@
 <div class="row">
     <div  class="col-xs-6 col-sm-4 col-lg-4" ng-repeat="x in imgSelect">
         <a   href="/#/imgDetail/{{x.id}}">
-            <img imgload
+            <img
                  class="img-responsive img-thumbnail"
-                 base64="{{x.Base64}}"
-                 temp-src="{{x.imgThums}}" />
+                 imgload
+                 temp-src="{{api+'/imgProxy/titleId/'+x.id}}"
+            />
             <div class="caption">
                 <span class="linebr">{{x.title}}</span>
 
@@ -55,4 +57,4 @@
     <button class="btn btn-default" ng-if="limitPage>0" ng-click="page(0)">上一页</button>
     <button class="btn  btn-danger" ng-click="page(1)">下一页</button>
 </div>
-
+</div>

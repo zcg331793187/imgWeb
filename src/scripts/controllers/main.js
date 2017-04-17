@@ -7,9 +7,11 @@
   angular.module('imgWebApp').controller('mainController', ['$rootScope', '$scope', '$routeParams', '$location', function ($rootScope, $scope, $routeParams, $location) {
 
 
-    $rootScope.api = $location.$$protocol+'://'+'img.chowgiftking.com';
-    $rootScope.host = $location.$$protocol+'://'+'img.chowgiftking.com';
+    $rootScope.api = $location.$$protocol+'://'+'api.chowgiftking.com:3003';
+    // $rootScope.host = $location.$$protocol+'://'+'img.chowgiftking.com';
       $rootScope.limitPage=0;
+
+
 
 
 

@@ -13,6 +13,10 @@ angular.module('imgWebApp')
       $scope.loading = true;
 
       getData.imgSearch($routeParams.title).then(function(data){
+
+
+
+
           $scope.imgSelect=data;
           $scope.count=data.length;
           $scope.loading = false;

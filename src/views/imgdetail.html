@@ -1,20 +1,24 @@
+<div>
+
+
 <div class="row" ng-if="loading">
     <div class="col-xs-12 col-lg-12 col-sm-12 text-center h1 text-danger">
         加载中
     </div>
 </div>
 <div ng-if="!loading" class="bg-success text-center h2 text-success caption">
-    <span class="linebr" ng-bind="imgs[0]['title']"></span>
-    <span ng-bind="imgs.length"></span> 张
+    <span class="linebr" ng-bind="imgs.title.title"></span>
+    <span ng-bind="imgs.list.length"></span> 张
 </div>
-<div class="row animate-repeat" ng-repeat="x in imgs">
+<div class="row animate-repeat" ng-repeat="x in imgs.list">
     <div class="col-xs-12 col-lg-12 col-sm-12 text-center" >
-        <a href="{{x.url}}" target="_blank">
+        <a href="{{api+'/imgProxy/id/'+x.id}}" target="_blank">
 
-        <img   imgload
-               temp-src="{{x.url}}"
-               alt="{{x.title}}"
+        <img
+                    imgload
+                    temp-src="{{api+'/imgProxy/id/'+x.id}}"
                class="img img-responsive img-b">
         </a>
     </div>
+</div>
 </div>

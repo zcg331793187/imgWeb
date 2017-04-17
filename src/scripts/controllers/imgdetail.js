@@ -13,7 +13,11 @@ angular.module('imgWebApp')
 
       $scope.loading=true;
       getData.getDetail($routeParams.imgDetailId).then(function(data){
+
+
+
           $scope.imgs = data;
+
           $scope.loading=false;
       });
       $scope.title = $routeParams.imgDetailId;
